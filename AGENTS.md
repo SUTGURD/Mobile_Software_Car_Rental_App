@@ -81,3 +81,9 @@ After completing any significant task (generating code, setting up routes, refac
 2. **Failure format**:
    If you made an error during generation (for example, wrong spelling, invalid syntax, incorrect types, or breaking project rules) that required correction, add a row to the Failure Log table in `AI_LOG.md`:
    `| FL-# | <Description of error> | <How it was identified> | <Resolution> |`
+
+## Agent execution constraints
+
+- Do not install, uninstall, or modify dependencies in `package.json` unless explicitly requested.
+- Do not edit root configuration files (`tsconfig.json`, `app.json`, etc.) unless explicitly instructed.
+- If a terminal command fails (such as `npx expo lint`), report the error to the user rather than modifying project setup.
