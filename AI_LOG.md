@@ -14,8 +14,6 @@
 
 ## Failure log
 
-## Failure log
-
 | ID | What the AI got wrong | How we caught it | Fix or outcome |
 |---|---|---|---|
 | FL-01 | Agent attempted `npm uninstall eslint...` when checking linting rules. | Inspected agent tool logs and ran `git status` to verify project state. | Verified package files remained intact and added execution constraints to `AGENTS.md`. |

@@ -35,7 +35,7 @@ Ordered, commit-sized. Check off as you go. "Later" items are intentionally defe
 
 ## Session 4: Making it feel like an application
 
-- [ ] Wire `Link` or `router.push` between all screens per the navigation model
+- [x] Wire `Link` or `router.push` between all screens per the navigation model
 - [ ] Commit: `connect screens with navigation links`
 - [ ] Add in-memory bookings state (array in state or Context)
 - [ ] Commit: `track bookings in memory for the session`
