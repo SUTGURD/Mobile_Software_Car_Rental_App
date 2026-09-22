@@ -87,3 +87,6 @@ After completing any significant task (generating code, setting up routes, refac
 - Do not install, uninstall, or modify dependencies in `package.json` unless explicitly requested.
 - Do not edit root configuration files (`tsconfig.json`, `app.json`, etc.) unless explicitly instructed.
 - If a terminal command fails (such as `npx expo lint`), report the error to the user rather than modifying project setup.
+
+3. **Task tracking format**:
+   When completing a task listed in `TODO.md`, you must update `TODO.md` by checking off the corresponding checkbox (`- [x]`) with its commit before finalising the task.
