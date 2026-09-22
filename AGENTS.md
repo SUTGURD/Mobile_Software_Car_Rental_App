@@ -69,3 +69,15 @@ When contributing code, documentation, commit messages, or responses in this rep
     - Do not use flowery or overused AI vocabulary (for example: "delve", "tapestry", "seamless", "crucial", "robust", "landscape", "beacon", "game-changer", "fostering", "testament", "effortlessly", "elevate").
     - Do not use conversational setups or robotic meta-announcements (for example: "Here is the code", "In this document", "Let us dive in", "Certainly!").
     - Do not append unnecessary summary blocks, conclusion paragraphs, or polite sign-offs.
+
+## AI logging protocol
+
+After completing any significant task (generating code, setting up routes, refactoring, or writing tests), you must append an entry to `AI_LOG.md`.
+
+1. **Interaction format**:
+   Add a new row to the Interaction Log table in `AI_LOG.md`:
+   `| A-# | <Date> | <Tool/Model> | <Task description> | "<Prompt used>" | <Verification method> | <Kept/Modified/Discarded> |`
+
+2. **Failure format**:
+   If you made an error during generation (for example, wrong spelling, invalid syntax, incorrect types, or breaking project rules) that required correction, add a row to the Failure Log table in `AI_LOG.md`:
+   `| FL-# | <Description of error> | <How it was identified> | <Resolution> |`
