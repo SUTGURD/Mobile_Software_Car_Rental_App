@@ -21,8 +21,8 @@ Ordered, commit-sized. Check off as you go. "Later" items are intentionally defe
 
 - [X] Write `src/types/models.ts` from `uml.md` (`User`, `Car`, `Booking`, `BookingAddOn`, `AddOn`, `Feature`, `CarSize`, `GearType`, `FuelType`, `BookingStatus`)
 - [X] Commit: `add data model types for cars and bookings`
-- [ ] Write `src/data/dummyCars.ts` and dummy AddOns
-- [ ] Commit: `add dummy car and addon data`
+- [X] Write `src/data/dummyCars.ts` and dummy AddOns
+- [X] Commit: `add dummy car and addon data`
 
 ## Session 3: Screens
 
