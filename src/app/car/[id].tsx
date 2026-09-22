@@ -101,7 +101,12 @@ export default function CarDetailsScreen() {
         <Pressable
           accessibilityLabel={`Rent ${car.brand} ${car.model}`}
           accessibilityRole="button"
-          onPress={() => router.push('/explore')}
+          onPress={() =>
+            router.push({
+              pathname: '/checkout',
+              params: { carId: car.carId },
+            } as unknown as Parameters<typeof router.push>[0])
+          }
           style={styles.primaryButton}>
           <Text style={styles.primaryButtonText}>Rent Car</Text>
         </Pressable>
@@ -142,7 +147,7 @@ function NavigationBar() {
       <Pressable
         accessibilityLabel="Calendar"
         accessibilityRole="button"
-        onPress={() => router.push('/explore')}
+        onPress={() => router.push('/bookings' as Parameters<typeof router.push>[0])}
         style={styles.navigationItem}>
         <Text style={styles.navigationIcon}>□</Text>
         <Text style={styles.navigationLabel}>Calendar</Text>

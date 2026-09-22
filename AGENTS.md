@@ -90,3 +90,5 @@ After completing any significant task (generating code, setting up routes, refac
 
 3. **Task tracking format**:
    When completing a task listed in `TODO.md`, you must update `TODO.md` by checking off the corresponding checkbox (`- [x]`) with its commit before finalising the task.
+
+When implementing custom navigation UI (such as a wireframe-specific bottom bar), use a clean `Stack` layout in `_layout.tsx`. Do not mix custom navigation components with Expo's default tab navigator.

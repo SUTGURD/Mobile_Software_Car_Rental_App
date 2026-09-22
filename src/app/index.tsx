@@ -115,7 +115,7 @@ export default function HomeScreen() {
         <Pressable
           accessibilityLabel="Calendar"
           accessibilityRole="button"
-          onPress={() => router.push('/explore')}
+          onPress={() => router.push('/bookings' as Parameters<typeof router.push>[0])}
           style={styles.navigationItem}>
           <Text style={styles.navigationIcon}>□</Text>
           <Text style={styles.navigationLabel}>Calendar</Text>

@@ -27,11 +27,11 @@ Ordered, commit-sized. Check off as you go. "Later" items are intentionally defe
 ## Session 3: Screens
 
 - [x] Build car list screen (`src/app/index.tsx`) rendering dummy data
-- [ ] Commit: `add car list screen`
+- [x] Commit: `add car list screen`
 - [x] Build car detail screen (`src/app/car/[id].tsx`)
-- [ ] Commit: `add car detail screen`
-- [ ] Build booking screen and my-bookings screen
-- [ ] Commit: `add booking and my-bookings screens`
+- [x] Commit: `add car detail screen`
+- [x] Build booking screen and my-bookings screen
+- [x] Commit: `add booking and my-bookings screens`
 
 ## Session 4: Making it feel like an application
 
