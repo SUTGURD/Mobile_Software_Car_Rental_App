@@ -28,7 +28,7 @@ Ordered, commit-sized. Check off as you go. "Later" items are intentionally defe
 
 - [x] Build car list screen (`src/app/index.tsx`) rendering dummy data
 - [ ] Commit: `add car list screen`
-- [ ] Build car detail screen (`src/app/car/[id].tsx`)
+- [x] Build car detail screen (`src/app/car/[id].tsx`)
 - [ ] Commit: `add car detail screen`
 - [ ] Build booking screen and my-bookings screen
 - [ ] Commit: `add booking and my-bookings screens`
