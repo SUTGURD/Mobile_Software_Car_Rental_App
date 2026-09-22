@@ -12,9 +12,10 @@ Ordered, commit-sized. Check off as you go. "Later" items are intentionally defe
 ## Session 1.5: Housekeeping
 
 - [x] Merge project conventions and AI disclosure into `AGENTS.md`
-- [ ] Replace default `README.md` with project-specific version
-- [ ] Add `TODO.md` to repository root
-- [ ] Commit: `document project conventions and update readme`
+- [x] Replace default `README.md` with project-specific version
+- [x] Add `TODO.md` to repository root
+- [x] Add `.idea/` and `.vscode/` to `.gitignore`
+- [x] Commit: `document project conventions and update readme`
 
 ## Session 2: Data shapes
 
