@@ -37,6 +37,7 @@ function CarCard({ car }: { car: Car }) {
         <Text style={styles.detail}>{formatLabel(car.size)}</Text>
         <Text style={styles.detail}>{formatLabel(car.fuelType)}</Text>
         <Text style={styles.detail}>{formatLabel(car.gearType)}</Text>
+        <Text style={styles.detail}>{formatLabel(car.seats.toString() + ' seats')}</Text>
       </View>
 
       <Pressable
