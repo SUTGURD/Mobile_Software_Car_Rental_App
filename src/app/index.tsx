@@ -10,12 +10,13 @@ import {
   View,
 } from 'react-native';
 
-import { dummyCars } from '@/data/dummyCars';
+import { NavigationBar } from '@/app/_layout';
 import {
   designColours,
   designSpacing,
   touchTargets,
 } from '@/constants/theme';
+import { dummyCars } from '@/data/dummyCars';
 import type { Car } from '@/types/models';
 
 function formatLabel(value: string) {
@@ -96,40 +97,7 @@ export default function HomeScreen() {
         />
       </View>
 
-      <View style={styles.navigation}>
-        <Pressable
-          accessibilityLabel="Home"
-          accessibilityRole="button"
-          onPress={() => router.replace('/')}
-          style={styles.navigationItem}>
-          <Text style={styles.navigationIcon}>⌂</Text>
-          <Text style={styles.navigationLabel}>Home</Text>
-        </Pressable>
-        <Pressable
-          accessibilityLabel="Search"
-          accessibilityRole="button"
-          onPress={() => setSearchQuery('')}
-          style={styles.navigationItem}>
-          <Text style={styles.navigationIcon}>⌕</Text>
-          <Text style={styles.navigationLabel}>Search</Text>
-        </Pressable>
-        <Pressable
-          accessibilityLabel="Calendar"
-          accessibilityRole="button"
-          onPress={() => router.push('/bookings' as Parameters<typeof router.push>[0])}
-          style={styles.navigationItem}>
-          <Text style={styles.navigationIcon}>□</Text>
-          <Text style={styles.navigationLabel}>Calendar</Text>
-        </Pressable>
-        <Pressable
-          accessibilityLabel="Back"
-          accessibilityRole="button"
-          onPress={() => router.back()}
-          style={styles.navigationItem}>
-          <Text style={styles.navigationIcon}>‹</Text>
-          <Text style={styles.navigationLabel}>Back</Text>
-        </Pressable>
-      </View>
+      <NavigationBar />
     </SafeAreaView>
   );
 }
@@ -229,31 +197,5 @@ const styles = StyleSheet.create({
     fontSize: 16,
     paddingVertical: designSpacing.lg,
     textAlign: 'center',
-  },
-  navigation: {
-    alignItems: 'center',
-    backgroundColor: designColours.card,
-    borderTopColor: designColours.secondary,
-    borderTopWidth: StyleSheet.hairlineWidth,
-    flexDirection: 'row',
-    justifyContent: 'space-around',
-    paddingBottom: designSpacing.xs,
-    paddingTop: designSpacing.xs,
-  },
-  navigationItem: {
-    alignItems: 'center',
-    justifyContent: 'center',
-    minHeight: touchTargets.minimumHeight,
-    minWidth: touchTargets.minimumWidth,
-  },
-  navigationIcon: {
-    color: designColours.primary,
-    fontSize: 22,
-    lineHeight: 24,
-  },
-  navigationLabel: {
-    color: designColours.text,
-    fontSize: 12,
-    fontWeight: '600',
   },
 });

@@ -63,6 +63,19 @@ history, to keep the log accurate about what actually happened.
 - [x] Reconcile `TODO.md` and `AI_LOG.md` with actual commit history
 - [x] Commit: `reconcile todo and ai log with actual commit history`
 
+## Session 5: First redesign and refactoring session
+
+- [x] Add seat count to car cards
+- [x] Commit `Add seat count to car cards` (`e4aade4`)
+- [x] Centralise code for navigation bar
+- [x] Commit `centralise navigation bar code`
+
+## Session 6: Seperate home screen from car list screen
+
+- [ ] Move car list screen to `src/app/list/index.tsx`
+- [ ] Build home screen in `src/app/index.tsx`
+- [ ] Make a button in the home screen that navigates to the car list
+
 ## Later
 
 - [ ] Swap dictionary for AsyncStorage, then SQLite (`expo-sqlite`)

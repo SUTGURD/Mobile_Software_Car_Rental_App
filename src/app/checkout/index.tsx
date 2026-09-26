@@ -10,6 +10,7 @@ import {
   View,
 } from 'react-native';
 
+import { NavigationBar } from '@/app/_layout';
 import { designColours, designSpacing, touchTargets } from '@/constants/theme';
 import { dummyAddOns, dummyCars } from '@/data/dummyCars';
 
@@ -142,42 +143,6 @@ function DateInput({
   );
 }
 
-function NavigationBar() {
-  return (
-    <View style={styles.navigation}>
-      <NavigationButton label="Home" icon="⌂" onPress={() => router.replace('/')} />
-      <NavigationButton label="Search" icon="⌕" onPress={() => router.replace('/')} />
-      <NavigationButton
-        label="Calendar"
-        icon="□"
-        onPress={() => router.push('/bookings' as Parameters<typeof router.push>[0])}
-      />
-      <NavigationButton label="Back" icon="‹" onPress={() => router.back()} />
-    </View>
-  );
-}
-
-function NavigationButton({
-  label,
-  icon,
-  onPress,
-}: {
-  label: string;
-  icon: string;
-  onPress: () => void;
-}) {
-  return (
-    <Pressable
-      accessibilityLabel={label}
-      accessibilityRole="button"
-      onPress={onPress}
-      style={styles.navigationItem}>
-      <Text style={styles.navigationIcon}>{icon}</Text>
-      <Text style={styles.navigationLabel}>{label}</Text>
-    </Pressable>
-  );
-}
-
 const styles = StyleSheet.create({
   container: { backgroundColor: designColours.background, flex: 1 },
   content: { padding: designSpacing.md },
@@ -200,8 +165,4 @@ const styles = StyleSheet.create({
   totalPrice: { color: designColours.primary, fontSize: 24, fontWeight: '700' },
   primaryButton: { alignItems: 'center', backgroundColor: designColours.accent, borderRadius: designSpacing.sm, justifyContent: 'center', minHeight: touchTargets.minimumHeight, marginTop: designSpacing.md },
   primaryButtonText: { color: designColours.card, fontSize: 17, fontWeight: '700' },
-  navigation: { alignItems: 'center', backgroundColor: designColours.card, borderTopColor: designColours.secondary, borderTopWidth: StyleSheet.hairlineWidth, flexDirection: 'row', justifyContent: 'space-around', paddingBottom: designSpacing.xs, paddingTop: designSpacing.xs },
-  navigationItem: { alignItems: 'center', justifyContent: 'center', minHeight: touchTargets.minimumHeight, minWidth: touchTargets.minimumWidth },
-  navigationIcon: { color: designColours.primary, fontSize: 22, lineHeight: 24 },
-  navigationLabel: { color: designColours.text, fontSize: 12, fontWeight: '600' },
 });

@@ -9,6 +9,7 @@ import {
   View,
 } from 'react-native';
 
+import { NavigationBar } from '@/app/_layout';
 import { designColours, designSpacing, touchTargets } from '@/constants/theme';
 import { dummyCars } from '@/data/dummyCars';
 
@@ -121,45 +122,6 @@ function Specification({ label, value }: { label: string; value: string }) {
     <View style={styles.specification}>
       <Text style={styles.specLabel}>{label}</Text>
       <Text style={styles.specValue}>{value}</Text>
-    </View>
-  );
-}
-
-function NavigationBar() {
-  return (
-    <View style={styles.navigation}>
-      <Pressable
-        accessibilityLabel="Home"
-        accessibilityRole="button"
-        onPress={() => router.replace('/')}
-        style={styles.navigationItem}>
-        <Text style={styles.navigationIcon}>⌂</Text>
-        <Text style={styles.navigationLabel}>Home</Text>
-      </Pressable>
-      <Pressable
-        accessibilityLabel="Search"
-        accessibilityRole="button"
-        onPress={() => router.replace('/')}
-        style={styles.navigationItem}>
-        <Text style={styles.navigationIcon}>⌕</Text>
-        <Text style={styles.navigationLabel}>Search</Text>
-      </Pressable>
-      <Pressable
-        accessibilityLabel="Calendar"
-        accessibilityRole="button"
-        onPress={() => router.push('/bookings' as Parameters<typeof router.push>[0])}
-        style={styles.navigationItem}>
-        <Text style={styles.navigationIcon}>□</Text>
-        <Text style={styles.navigationLabel}>Calendar</Text>
-      </Pressable>
-      <Pressable
-        accessibilityLabel="Back"
-        accessibilityRole="button"
-        onPress={() => router.back()}
-        style={styles.navigationItem}>
-        <Text style={styles.navigationIcon}>‹</Text>
-        <Text style={styles.navigationLabel}>Back</Text>
-      </Pressable>
     </View>
   );
 }

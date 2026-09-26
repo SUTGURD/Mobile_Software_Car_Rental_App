@@ -1,7 +1,7 @@
-import { router } from 'expo-router';
-import { SafeAreaView, ScrollView, StyleSheet, Text, Pressable, View } from 'react-native';
+import { SafeAreaView, ScrollView, StyleSheet, Text, View } from 'react-native';
 
-import { designColours, designSpacing, touchTargets } from '@/constants/theme';
+import { NavigationBar } from '@/app/_layout';
+import { designColours, designSpacing } from '@/constants/theme';
 import { dummyBookings } from '@/data/dummyBookings';
 import { dummyCars } from '@/data/dummyCars';
 
@@ -32,30 +32,6 @@ export default function BookingsScreen() {
   );
 }
 
-function NavigationBar() {
-  return (
-    <View style={styles.navigation}>
-      <NavigationButton label="Home" icon="⌂" onPress={() => router.replace('/')} />
-      <NavigationButton label="Search" icon="⌕" onPress={() => router.replace('/')} />
-      <NavigationButton
-        label="Calendar"
-        icon="□"
-        onPress={() => router.replace('/bookings' as Parameters<typeof router.replace>[0])}
-      />
-      <NavigationButton label="Back" icon="‹" onPress={() => router.back()} />
-    </View>
-  );
-}
-
-function NavigationButton({ label, icon, onPress }: { label: string; icon: string; onPress: () => void }) {
-  return (
-    <Pressable accessibilityLabel={label} accessibilityRole="button" onPress={onPress} style={styles.navigationItem}>
-      <Text style={styles.navigationIcon}>{icon}</Text>
-      <Text style={styles.navigationLabel}>{label}</Text>
-    </Pressable>
-  );
-}
-
 const styles = StyleSheet.create({
   container: { backgroundColor: designColours.background, flex: 1 },
   content: { padding: designSpacing.md },
@@ -67,8 +43,4 @@ const styles = StyleSheet.create({
   status: { backgroundColor: '#D8F3E5', borderRadius: designSpacing.xs, color: '#177245', fontSize: 12, fontWeight: '700', paddingHorizontal: designSpacing.sm, paddingVertical: designSpacing.xs },
   dates: { color: designColours.textMuted, fontSize: 15, marginTop: designSpacing.md },
   total: { color: designColours.primary, fontSize: 20, fontWeight: '700', marginTop: designSpacing.sm },
-  navigation: { alignItems: 'center', backgroundColor: designColours.card, borderTopColor: designColours.secondary, borderTopWidth: StyleSheet.hairlineWidth, flexDirection: 'row', justifyContent: 'space-around', paddingBottom: designSpacing.xs, paddingTop: designSpacing.xs },
-  navigationItem: { alignItems: 'center', justifyContent: 'center', minHeight: touchTargets.minimumHeight, minWidth: touchTargets.minimumWidth },
-  navigationIcon: { color: designColours.primary, fontSize: 22, lineHeight: 24 },
-  navigationLabel: { color: designColours.text, fontSize: 12, fontWeight: '600' },
 });
