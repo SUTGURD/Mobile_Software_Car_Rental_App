@@ -91,6 +91,7 @@ export default function RootLayout() {
       <AnimatedSplashOverlay />
       <Stack screenOptions={{ headerShown: false }}>
         <Stack.Screen name="index" />
+        <Stack.Screen name="login/index" />
         <Stack.Screen name="error" />
         <Stack.Screen name="list/index" />
         <Stack.Screen name="car/[id]" />

@@ -79,11 +79,25 @@ history, to keep the log accurate about what actually happened.
 - [x] Make a button in the home screen that navigates to the car list
 - [x] Commit `add home screen and separate it from car list screen`
 
-## Session 7: Error Screen
+## Session 7: Error screen
 
 - [x] Build error screen (`src/app/error.tsx`)
 - [x] Catch screen and unmatched-route errors and redirect to the error screen
-- [ ] Commit: `add error screen and navigation error handling`
+- [x] Commit: `add error screen and navigation error handling`
+
+## Session 8: Login screen and state
+
+- [x] Build login screen (`src/app/login/index.tsx`)
+- [x] Commit: `add login screen`
+- [ ] Write `src/data/dummyUsers.ts`
+- [ ] Commit: `add dummy user data`
+- [ ] Create authentification context and useAuth hook
+- [ ] Implement dummy credential validation using email and password hashes
+- [ ] Make successful login update the authentification state
+- [ ] Use useAuth to protect booking
+- [ ] Commit: `add login authentification`
+- [ ] Use useAuth to update the home screen with a logout button
+- [ ] Commit: `add logout button`
 
 ## Later
 
