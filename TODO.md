@@ -97,8 +97,8 @@ history, to keep the log accurate about what actually happened.
 - [x] Make successful login update the authentification state
 - [x] Use useAuth to protect the Calendar and Rent Car actions
 - [x] Commit: `add login authentification`
-- [ ] Use useAuth to update the home screen with a logout button
-- [ ] Commit: `add logout button`
+- [x] Use useAuth to update the home screen with a logout button
+- [x] Commit: `add logout button`
 
 ## Later
 

@@ -2,6 +2,7 @@ import { router } from 'expo-router';
 import { Pressable, SafeAreaView, StyleSheet, Text, View } from 'react-native';
 
 import { NavigationBar } from '@/app/_layout';
+import { useAuth } from '@/components/useAuth';
 
 function CarIllustration() {
   return (
@@ -41,6 +42,8 @@ function HomeButton({
 }
 
 export default function HomeScreen() {
+  const { isAuthenticated, logout } = useAuth();
+
   return (
     <SafeAreaView style={styles.safeArea}>
       <View style={styles.upperPanel}>
@@ -50,9 +53,12 @@ export default function HomeScreen() {
         </View>
         <View style={styles.actions}>
           <HomeButton
-            label="LOGIN"
-            onPress={() =>
-              router.push('/login' as Parameters<typeof router.push>[0])
+            label={isAuthenticated ? 'LOGOUT' : 'LOGIN'}
+            onPress={
+              isAuthenticated
+                ? logout
+                : () =>
+                    router.push('/login' as Parameters<typeof router.push>[0])
             }
           />
           <HomeButton
