@@ -68,7 +68,9 @@ history, to keep the log accurate about what actually happened.
 - [x] Add seat count to car cards
 - [x] Commit `Add seat count to car cards` (`e4aade4`)
 - [x] Centralise code for navigation bar
-- [x] Commit `centralise navigation bar code`
+- [x] Commit `centralise navigation bar code` (`4206f64`)
+- [x] Handle back button when navigation stack is empty
+- [x] Commit `disable back button when no prior route exists`
 
 ## Session 6: Seperate home screen from car list screen
 

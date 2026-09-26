@@ -14,6 +14,8 @@ import { designColours, designSpacing, touchTargets } from '@/constants/theme';
 SplashScreen.preventAutoHideAsync();
 
 export function NavigationBar() {
+  const canGoBack = router.canGoBack();
+
   return (
     <View style={styles.navigation}>
       <NavigationButton label="Home" icon="⌂" onPress={() => router.replace('/')} />
@@ -23,7 +25,16 @@ export function NavigationBar() {
         icon="□"
         onPress={() => router.push('/bookings' as Parameters<typeof router.push>[0])}
       />
-      <NavigationButton label="Back" icon="‹" onPress={() => router.back()} />
+      <NavigationButton
+        disabled={!canGoBack}
+        label="Back"
+        icon="‹"
+        onPress={() => {
+          if (canGoBack) {
+            router.back();
+          }
+        }}
+      />
     </View>
   );
 }
@@ -32,19 +43,27 @@ function NavigationButton({
   label,
   icon,
   onPress,
+  disabled = false,
 }: {
   label: string;
   icon: string;
   onPress: () => void;
+  disabled?: boolean;
 }) {
+  const buttonStyle = [styles.navigationItem, disabled && styles.navigationItemDisabled];
+  const iconStyle = [styles.navigationIcon, disabled && styles.navigationIconDisabled];
+  const labelStyle = [styles.navigationLabel, disabled && styles.navigationLabelDisabled];
+
   return (
     <Pressable
       accessibilityLabel={label}
       accessibilityRole="button"
+      accessibilityState={{ disabled }}
+      disabled={disabled}
       onPress={onPress}
-      style={styles.navigationItem}>
-      <Text style={styles.navigationIcon}>{icon}</Text>
-      <Text style={styles.navigationLabel}>{label}</Text>
+      style={buttonStyle}>
+      <Text style={iconStyle}>{icon}</Text>
+      <Text style={labelStyle}>{label}</Text>
     </Pressable>
   );
 }
@@ -82,14 +101,23 @@ const styles = StyleSheet.create({
     minHeight: touchTargets.minimumHeight,
     minWidth: touchTargets.minimumWidth,
   },
+  navigationItemDisabled: {
+    opacity: 0.4,
+  },
   navigationIcon: {
     color: designColours.primary,
     fontSize: 22,
     lineHeight: 24,
   },
+  navigationIconDisabled: {
+    color: designColours.textMuted,
+  },
   navigationLabel: {
     color: designColours.text,
     fontSize: 12,
     fontWeight: '600',
+  },
+  navigationLabelDisabled: {
+    color: designColours.textMuted,
   },
 });
