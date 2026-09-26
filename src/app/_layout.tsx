@@ -11,6 +11,8 @@ import * as SplashScreen from 'expo-splash-screen';
 import { Pressable, StyleSheet, Text, View, useColorScheme } from 'react-native';
 
 import { AnimatedSplashOverlay } from '@/components/animated-icon';
+import { useAuth } from '@/components/useAuth';
+import { AuthProvider } from '@/context/AuthContext';
 import { designColours, designSpacing, touchTargets } from '@/constants/theme';
 
 SplashScreen.preventAutoHideAsync();
@@ -25,6 +27,7 @@ export const unstable_settings = {
 
 export function NavigationBar() {
   const canGoBack = router.canGoBack();
+  const { isAuthenticated } = useAuth();
 
   return (
     <View style={styles.navigation}>
@@ -39,7 +42,11 @@ export function NavigationBar() {
       <NavigationButton
         label="Calendar"
         icon="□"
-        onPress={() => router.push('/bookings' as Parameters<typeof router.push>[0])}
+        onPress={() =>
+          isAuthenticated
+            ? router.push('/bookings' as Parameters<typeof router.push>[0])
+            : router.push('/login' as Parameters<typeof router.push>[0])
+        }
       />
       <NavigationButton
         disabled={!canGoBack}
@@ -87,19 +94,21 @@ function NavigationButton({
 export default function RootLayout() {
   const colorScheme = useColorScheme();
   return (
-    <ThemeProvider value={colorScheme === 'dark' ? DarkTheme : DefaultTheme}>
-      <AnimatedSplashOverlay />
-      <Stack screenOptions={{ headerShown: false }}>
-        <Stack.Screen name="index" />
-        <Stack.Screen name="login/index" />
-        <Stack.Screen name="error" />
-        <Stack.Screen name="list/index" />
-        <Stack.Screen name="car/[id]" />
-        <Stack.Screen name="checkout/index" />
-        <Stack.Screen name="checkout/confirmation" />
-        <Stack.Screen name="bookings/index" />
-      </Stack>
-    </ThemeProvider>
+    <AuthProvider>
+      <ThemeProvider value={colorScheme === 'dark' ? DarkTheme : DefaultTheme}>
+        <AnimatedSplashOverlay />
+        <Stack screenOptions={{ headerShown: false }}>
+          <Stack.Screen name="index" />
+          <Stack.Screen name="login/index" />
+          <Stack.Screen name="error" />
+          <Stack.Screen name="list/index" />
+          <Stack.Screen name="car/[id]" />
+          <Stack.Screen name="checkout/index" />
+          <Stack.Screen name="checkout/confirmation" />
+          <Stack.Screen name="bookings/index" />
+        </Stack>
+      </ThemeProvider>
+    </AuthProvider>
   );
 }
 

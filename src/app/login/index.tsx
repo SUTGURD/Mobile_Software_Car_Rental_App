@@ -1,4 +1,5 @@
 import { router } from 'expo-router';
+import { useState } from 'react';
 import {
   KeyboardAvoidingView,
   Platform,
@@ -16,8 +17,28 @@ import {
   designSpacing,
   touchTargets,
 } from '@/constants/theme';
+import { useAuth } from '@/components/useAuth';
 
 export default function LoginScreen() {
+  const { login } = useAuth();
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const [errorMessage, setErrorMessage] = useState('');
+
+  const handleLogin = async () => {
+    setErrorMessage('');
+    try {
+      const authenticated = await login(email, password);
+      if (authenticated) {
+        router.replace('/');
+      } else {
+        setErrorMessage('Email or password is incorrect.');
+      }
+    } catch {
+      setErrorMessage('Unable to verify your account. Please try again.');
+    }
+  };
+
   return (
     <SafeAreaView style={styles.safeArea}>
       <KeyboardAvoidingView
@@ -39,31 +60,42 @@ export default function LoginScreen() {
                 autoCapitalize="none"
                 autoComplete="email"
                 keyboardType="email-address"
+                onChangeText={setEmail}
                 placeholder="email@adress.com"
                 placeholderTextColor={designColours.textMuted}
                 style={styles.input}
+                value={email}
               />
 
               <Text style={styles.label}>Password</Text>
               <TextInput
                 accessibilityLabel="Password"
                 autoComplete="current-password"
+                onChangeText={setPassword}
                 placeholder="************"
                 placeholderTextColor={designColours.textMuted}
                 secureTextEntry
                 style={styles.input}
+                value={password}
               />
             </View>
             </View>
 
             <Pressable
               accessibilityRole="button"
+              onPress={handleLogin}
               style={({ pressed }) => [
                 styles.button,
                 pressed && styles.pressed,
               ]}>
               <Text style={styles.buttonText}>Login</Text>
             </Pressable>
+
+            {errorMessage ? (
+              <Text accessibilityRole="alert" style={styles.errorMessage}>
+                {errorMessage}
+              </Text>
+            ) : null}
 
             <Pressable
               accessibilityRole="button"
@@ -151,6 +183,12 @@ const styles = StyleSheet.create({
     color: designColours.card,
     fontSize: 14,
     fontWeight: '700',
+  },
+  errorMessage: {
+    color: designColours.card,
+    fontSize: 14,
+    marginTop: designSpacing.sm,
+    textAlign: 'center',
   },
   pressed: {
     opacity: 0.8,

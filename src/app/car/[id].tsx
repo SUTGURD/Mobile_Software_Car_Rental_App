@@ -10,6 +10,7 @@ import {
 } from 'react-native';
 
 import { NavigationBar } from '@/app/_layout';
+import { useAuth } from '@/components/useAuth';
 import { designColours, designSpacing, touchTargets } from '@/constants/theme';
 import { dummyCars } from '@/data/dummyCars';
 
@@ -26,6 +27,7 @@ function StatusValue({ value }: { value: boolean }) {
 }
 
 export default function CarDetailsScreen() {
+  const { isAuthenticated } = useAuth();
   const { id } = useLocalSearchParams<{ id?: string | string[] }>();
   const carId = Array.isArray(id) ? id[0] : id;
   const car = useMemo(
@@ -102,12 +104,16 @@ export default function CarDetailsScreen() {
         <Pressable
           accessibilityLabel={`Rent ${car.brand} ${car.model}`}
           accessibilityRole="button"
-          onPress={() =>
+          onPress={() => {
+            if (!isAuthenticated) {
+              router.push('/login' as Parameters<typeof router.push>[0]);
+              return;
+            }
             router.push({
               pathname: '/checkout',
               params: { carId: car.carId },
-            } as unknown as Parameters<typeof router.push>[0])
-          }
+            } as unknown as Parameters<typeof router.push>[0]);
+          }}
           style={styles.primaryButton}>
           <Text style={styles.primaryButtonText}>Rent Car</Text>
         </Pressable>

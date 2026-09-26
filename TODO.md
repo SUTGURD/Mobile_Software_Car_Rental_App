@@ -91,12 +91,12 @@ history, to keep the log accurate about what actually happened.
 - [x] Commit: `add login screen`
 - [x] Add expo-crypto
 - [x] Write `src/data/dummyUsers.ts`
-- [ ] Commit: `add expo-crypto and dummy user data`
-- [ ] Create authentification context and useAuth hook
-- [ ] Implement dummy credential validation using email and password hashes
-- [ ] Make successful login update the authentification state
-- [ ] Use useAuth to protect booking
-- [ ] Commit: `add login authentification`
+- [x] Commit: `add expo-crypto and dummy user data`
+- [x] Create authentification context and useAuth hook
+- [x] Implement dummy credential validation using email and password hashes
+- [x] Make successful login update the authentification state
+- [x] Use useAuth to protect the Calendar and Rent Car actions
+- [x] Commit: `add login authentification`
 - [ ] Use useAuth to update the home screen with a logout button
 - [ ] Commit: `add logout button`
 
