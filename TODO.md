@@ -89,8 +89,9 @@ history, to keep the log accurate about what actually happened.
 
 - [x] Build login screen (`src/app/login/index.tsx`)
 - [x] Commit: `add login screen`
-- [ ] Write `src/data/dummyUsers.ts`
-- [ ] Commit: `add dummy user data`
+- [x] Add expo-crypto
+- [x] Write `src/data/dummyUsers.ts`
+- [ ] Commit: `add expo-crypto and dummy user data`
 - [ ] Create authentification context and useAuth hook
 - [ ] Implement dummy credential validation using email and password hashes
 - [ ] Make successful login update the authentification state
