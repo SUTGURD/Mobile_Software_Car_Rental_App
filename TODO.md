@@ -79,6 +79,12 @@ history, to keep the log accurate about what actually happened.
 - [x] Make a button in the home screen that navigates to the car list
 - [x] Commit `add home screen and separate it from car list screen`
 
+## Session 7: Error Screen
+
+- [x] Build error screen (`src/app/error.tsx`)
+- [x] Catch screen and unmatched-route errors and redirect to the error screen
+- [ ] Commit: `add error screen and navigation error handling`
+
 ## Later
 
 - [ ] Swap dictionary for AsyncStorage, then SQLite (`expo-sqlite`)

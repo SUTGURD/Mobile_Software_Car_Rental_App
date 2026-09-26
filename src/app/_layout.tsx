@@ -1,9 +1,11 @@
 import {
   DarkTheme,
   DefaultTheme,
+  Redirect,
   Stack,
   ThemeProvider,
   router,
+  type ErrorBoundaryProps,
 } from 'expo-router';
 import * as SplashScreen from 'expo-splash-screen';
 import { Pressable, StyleSheet, Text, View, useColorScheme } from 'react-native';
@@ -12,6 +14,14 @@ import { AnimatedSplashOverlay } from '@/components/animated-icon';
 import { designColours, designSpacing, touchTargets } from '@/constants/theme';
 
 SplashScreen.preventAutoHideAsync();
+
+function NavigationErrorBoundary(_: ErrorBoundaryProps) {
+  return <Redirect href={'/error' as Parameters<typeof Redirect>[0]['href']} />;
+}
+
+export const unstable_settings = {
+  screenErrorBoundary: NavigationErrorBoundary,
+};
 
 export function NavigationBar() {
   const canGoBack = router.canGoBack();
@@ -81,6 +91,7 @@ export default function RootLayout() {
       <AnimatedSplashOverlay />
       <Stack screenOptions={{ headerShown: false }}>
         <Stack.Screen name="index" />
+        <Stack.Screen name="error" />
         <Stack.Screen name="list/index" />
         <Stack.Screen name="car/[id]" />
         <Stack.Screen name="checkout/index" />

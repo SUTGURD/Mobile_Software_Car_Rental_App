@@ -49,7 +49,12 @@ export default function HomeScreen() {
           <CarIllustration />
         </View>
         <View style={styles.actions}>
-          <HomeButton label="LOGIN" />
+          <HomeButton
+            label="LOGIN"
+            onPress={() =>
+              router.push('/login' as Parameters<typeof router.push>[0])
+            }
+          />
           <HomeButton
             label="BROWSE CARS"
             onPress={() =>
