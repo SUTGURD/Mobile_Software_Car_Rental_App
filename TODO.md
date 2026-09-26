@@ -100,6 +100,12 @@ history, to keep the log accurate about what actually happened.
 - [x] Use useAuth to update the home screen with a logout button
 - [x] Commit: `add logout button`
 
+## Session 8.5: Better UI and navigation when logging in
+
+- [x] Add navigation bar to login screen
+- [x] Return to previous screen after logging in
+- [x] Commit: `add nav-bar to login screen and navigate to latest screen when logging in`
+
 ## Later
 
 - [ ] Swap dictionary for AsyncStorage, then SQLite (`expo-sqlite`)

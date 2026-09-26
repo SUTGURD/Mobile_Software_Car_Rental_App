@@ -18,6 +18,7 @@ import {
   touchTargets,
 } from '@/constants/theme';
 import { useAuth } from '@/components/useAuth';
+import { NavigationBar } from '@/app/_layout';
 
 export default function LoginScreen() {
   const { login } = useAuth();
@@ -30,7 +31,11 @@ export default function LoginScreen() {
     try {
       const authenticated = await login(email, password);
       if (authenticated) {
-        router.replace('/');
+        if (router.canGoBack()) {
+          router.back();
+        } else {
+          router.replace('/');
+        }
       } else {
         setErrorMessage('Email or password is incorrect.');
       }
@@ -51,34 +56,33 @@ export default function LoginScreen() {
             <View style={styles.intro}>
               <Text style={styles.heading}>Login</Text>
               <Text style={styles.subtitle}>Enter account details to login</Text>
-            
 
-            <View style={styles.form}>
-              <Text style={styles.label}>Email</Text>
-              <TextInput
-                accessibilityLabel="Email"
-                autoCapitalize="none"
-                autoComplete="email"
-                keyboardType="email-address"
-                onChangeText={setEmail}
-                placeholder="email@adress.com"
-                placeholderTextColor={designColours.textMuted}
-                style={styles.input}
-                value={email}
-              />
+              <View style={styles.form}>
+                <Text style={styles.label}>Email</Text>
+                <TextInput
+                  accessibilityLabel="Email"
+                  autoCapitalize="none"
+                  autoComplete="email"
+                  keyboardType="email-address"
+                  onChangeText={setEmail}
+                  placeholder="email@adress.com"
+                  placeholderTextColor={designColours.textMuted}
+                  style={styles.input}
+                  value={email}
+                />
 
-              <Text style={styles.label}>Password</Text>
-              <TextInput
-                accessibilityLabel="Password"
-                autoComplete="current-password"
-                onChangeText={setPassword}
-                placeholder="************"
-                placeholderTextColor={designColours.textMuted}
-                secureTextEntry
-                style={styles.input}
-                value={password}
-              />
-            </View>
+                <Text style={styles.label}>Password</Text>
+                <TextInput
+                  accessibilityLabel="Password"
+                  autoComplete="current-password"
+                  onChangeText={setPassword}
+                  placeholder="************"
+                  placeholderTextColor={designColours.textMuted}
+                  secureTextEntry
+                  style={styles.input}
+                  value={password}
+                />
+              </View>
             </View>
 
             <Pressable
@@ -109,6 +113,7 @@ export default function LoginScreen() {
           </View>
         </ScrollView>
       </KeyboardAvoidingView>
+      <NavigationBar />
     </SafeAreaView>
   );
 }
