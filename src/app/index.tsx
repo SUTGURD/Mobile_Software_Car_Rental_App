@@ -1,102 +1,65 @@
 import { router } from 'expo-router';
-import { useMemo, useState } from 'react';
-import {
-  FlatList,
-  Pressable,
-  SafeAreaView,
-  StyleSheet,
-  Text,
-  TextInput,
-  View,
-} from 'react-native';
+import { Pressable, SafeAreaView, StyleSheet, Text, View } from 'react-native';
 
 import { NavigationBar } from '@/app/_layout';
-import {
-  designColours,
-  designSpacing,
-  touchTargets,
-} from '@/constants/theme';
-import { dummyCars } from '@/data/dummyCars';
-import type { Car } from '@/types/models';
 
-function formatLabel(value: string) {
-  return value.charAt(0) + value.slice(1).toLowerCase();
-}
-
-function CarCard({ car }: { car: Car }) {
+function CarIllustration() {
   return (
-    <View style={styles.card}>
-      <View style={styles.cardHeader}>
-        <View style={styles.cardTitle}>
-          <Text style={styles.brand}>{car.brand}</Text>
-          <Text style={styles.model}>{car.model}</Text>
-        </View>
-        <Text style={styles.price}>£{car.pricePerDay}/day</Text>
+    <View
+      accessibilityLabel="Illustration of a green rental car"
+      accessible
+      style={styles.carIllustration}>
+      <View style={styles.carRoof}>
+        <View style={styles.carWindow} />
       </View>
-
-      <View style={styles.details}>
-        <Text style={styles.detail}>{formatLabel(car.size)}</Text>
-        <Text style={styles.detail}>{formatLabel(car.fuelType)}</Text>
-        <Text style={styles.detail}>{formatLabel(car.gearType)}</Text>
-        <Text style={styles.detail}>{formatLabel(car.seats.toString() + ' seats')}</Text>
+      <View style={styles.carBody} />
+      <View style={[styles.wheel, styles.frontWheel]}>
+        <View style={styles.wheelCentre} />
       </View>
-
-      <Pressable
-        accessibilityLabel={`View ${car.brand} ${car.model}`}
-        accessibilityRole="button"
-        onPress={() =>
-          router.push({
-            pathname: '/car/[id]',
-            params: { id: car.carId },
-          } as Parameters<typeof router.push>[0])
-        }
-        style={({ pressed }) => [styles.viewButton, pressed && styles.pressed]}>
-        <Text style={styles.viewButtonText}>View Car</Text>
-      </Pressable>
+      <View style={[styles.wheel, styles.rearWheel]}>
+        <View style={styles.wheelCentre} />
+      </View>
     </View>
   );
 }
 
+function HomeButton({
+  label,
+  onPress,
+}: {
+  label: string;
+  onPress?: () => void;
+}) {
+  return (
+    <Pressable
+      accessibilityRole="button"
+      onPress={onPress}
+      style={({ pressed }) => [styles.actionButton, pressed && styles.pressed]}>
+      <Text style={styles.actionButtonText}>{label}</Text>
+    </Pressable>
+  );
+}
+
 export default function HomeScreen() {
-  const [searchQuery, setSearchQuery] = useState('');
-  const filteredCars = useMemo(() => {
-    const query = searchQuery.trim().toLowerCase();
-    if (!query) {
-      return dummyCars;
-    }
-
-    return dummyCars.filter((car) =>
-      `${car.brand} ${car.model}`.toLowerCase().includes(query),
-    );
-  }, [searchQuery]);
-
   return (
     <SafeAreaView style={styles.safeArea}>
-      <View style={styles.content}>
-        <Text style={styles.heading}>Browse Cars</Text>
-        <TextInput
-          accessibilityLabel="Search cars by brand or model"
-          accessibilityRole="search"
-          autoCapitalize="none"
-          onChangeText={setSearchQuery}
-          placeholder="Search by brand or model"
-          placeholderTextColor={designColours.textMuted}
-          style={styles.searchInput}
-          value={searchQuery}
-        />
-
-        <FlatList
-          contentContainerStyle={styles.listContent}
-          data={filteredCars}
-          keyExtractor={(car) => car.carId}
-          ListEmptyComponent={
-            <Text style={styles.emptyText}>No cars match your search.</Text>
-          }
-          renderItem={({ item }) => <CarCard car={item} />}
-          showsVerticalScrollIndicator={false}
-        />
+      <View style={styles.upperPanel}>
+        <Text style={styles.title}>CAR RENTAL NAME</Text>
+        <View style={styles.illustrationPanel}>
+          <CarIllustration />
+        </View>
+        <View style={styles.actions}>
+          <HomeButton label="LOGIN" />
+          <HomeButton
+            label="BROWSE CARS"
+            onPress={() =>
+              router.push('/list' as Parameters<typeof router.push>[0])
+            }
+          />
+        </View>
       </View>
-
+      <View style={styles.middlePanel} />
+      <View style={styles.lowerPanel} />
       <NavigationBar />
     </SafeAreaView>
   );
@@ -104,98 +67,125 @@ export default function HomeScreen() {
 
 const styles = StyleSheet.create({
   safeArea: {
-    backgroundColor: designColours.background,
+    backgroundColor: '#D5DDED',
     flex: 1,
   },
-  content: {
-    flex: 1,
-    paddingHorizontal: designSpacing.md,
-  },
-  heading: {
-    color: designColours.primary,
-    fontSize: 30,
-    fontWeight: '700',
-    marginBottom: designSpacing.md,
-    marginTop: designSpacing.sm,
-  },
-  searchInput: {
-    backgroundColor: designColours.card,
-    borderColor: designColours.secondary,
-    borderRadius: designSpacing.sm,
-    borderWidth: 1,
-    color: designColours.text,
-    fontSize: 16,
-    height: touchTargets.minimumHeight,
-    paddingHorizontal: designSpacing.md,
-  },
-  listContent: {
-    gap: designSpacing.md,
-    paddingBottom: designSpacing.md,
-    paddingTop: designSpacing.md,
-  },
-  card: {
-    backgroundColor: designColours.card,
-    borderRadius: designSpacing.md,
-    padding: designSpacing.md,
-  },
-  cardHeader: {
-    alignItems: 'flex-start',
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-  },
-  cardTitle: {
-    flex: 1,
-  },
-  brand: {
-    color: designColours.textMuted,
-    fontSize: 14,
-    fontWeight: '600',
-  },
-  model: {
-    color: designColours.text,
-    fontSize: 22,
-    fontWeight: '700',
-    marginTop: designSpacing.xs,
-  },
-  price: {
-    color: designColours.primary,
-    fontSize: 16,
-    fontWeight: '700',
-  },
-  details: {
-    flexDirection: 'row',
-    flexWrap: 'wrap',
-    gap: designSpacing.sm,
-    marginVertical: designSpacing.md,
-  },
-  detail: {
-    backgroundColor: designColours.background,
-    borderRadius: designSpacing.xs,
-    color: designColours.text,
-    fontSize: 13,
-    paddingHorizontal: designSpacing.sm,
-    paddingVertical: designSpacing.xs,
-  },
-  viewButton: {
+  upperPanel: {
     alignItems: 'center',
-    backgroundColor: designColours.primary,
-    borderRadius: designSpacing.sm,
+    backgroundColor: '#6399BF',
+    flex: 4.3,
+    paddingHorizontal: 20,
+    paddingTop: 24,
+  },
+  title: {
+    color: '#FFFFFF',
+    fontSize: 32,
+    fontWeight: '700',
+    marginBottom: 18,
+    textAlign: 'center',
+  },
+  illustrationPanel: {
+    alignItems: 'center',
+    backgroundColor: '#FFFFFF',
+    borderRadius: 14,
+    height: 176,
     justifyContent: 'center',
-    minHeight: touchTargets.minimumHeight,
-    paddingHorizontal: designSpacing.md,
+    marginBottom: 20,
+    maxWidth: 420,
+    width: '100%',
+  },
+  carIllustration: {
+    height: 132,
+    maxWidth: 340,
+    position: 'relative',
+    width: '88%',
+  },
+  carRoof: {
+    backgroundColor: '#B5E619',
+    borderColor: '#050505',
+    borderTopLeftRadius: 54,
+    borderTopRightRadius: 48,
+    borderWidth: 6,
+    height: 82,
+    position: 'absolute',
+    right: '9%',
+    top: 0,
+    width: '47%',
+    zIndex: 1,
+  },
+  carWindow: {
+    backgroundColor: '#8A8A8A',
+    borderColor: '#050505',
+    borderRadius: 22,
+    borderWidth: 4,
+    height: 44,
+    marginLeft: 12,
+    marginTop: 10,
+    width: '72%',
+  },
+  carBody: {
+    backgroundColor: '#B5E619',
+    borderColor: '#050505',
+    borderRadius: 36,
+    borderWidth: 6,
+    bottom: 20,
+    height: 70,
+    left: 0,
+    position: 'absolute',
+    right: 0,
+  },
+  wheel: {
+    alignItems: 'center',
+    backgroundColor: '#050505',
+    borderRadius: 25,
+    bottom: 0,
+    height: 48,
+    justifyContent: 'center',
+    position: 'absolute',
+    width: 48,
+    zIndex: 2,
+  },
+  frontWheel: {
+    left: '14%',
+  },
+  rearWheel: {
+    right: '14%',
+  },
+  wheelCentre: {
+    backgroundColor: '#FFFFFF',
+    borderRadius: 12,
+    height: 22,
+    width: 22,
+  },
+  actions: {
+    alignItems: 'center',
+    gap: 20,
+    maxWidth: 360,
+    width: '88%',
+  },
+  actionButton: {
+    alignItems: 'center',
+    backgroundColor: '#466173',
+    borderRadius: 14,
+    justifyContent: 'center',
+    minHeight: 80,
+    paddingHorizontal: 12,
+    width: '100%',
+  },
+  actionButtonText: {
+    color: '#FFFFFF',
+    fontSize: 28,
+    fontWeight: '600',
   },
   pressed: {
     opacity: 0.8,
   },
-  viewButtonText: {
-    color: designColours.card,
-    fontSize: 16,
-    fontWeight: '700',
+  middlePanel: {
+    backgroundColor: '#B6D3E7',
+    flex: 1,
   },
-  emptyText: {
-    color: designColours.textMuted,
-    fontSize: 16,
-    paddingVertical: designSpacing.lg,
-    textAlign: 'center',
+  lowerPanel: {
+    backgroundColor: '#D5DDED',
+    flex: 0.8,
   },
 });

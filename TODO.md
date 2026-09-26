@@ -70,13 +70,14 @@ history, to keep the log accurate about what actually happened.
 - [x] Centralise code for navigation bar
 - [x] Commit `centralise navigation bar code` (`4206f64`)
 - [x] Handle back button when navigation stack is empty
-- [x] Commit `disable back button when no prior route exists`
+- [x] Commit `disable back button when no prior route exists` (`aabb00b`)
 
-## Session 6: Seperate home screen from car list screen
+## Session 6: Separate home screen from car list screen
 
-- [ ] Move car list screen to `src/app/list/index.tsx`
-- [ ] Build home screen in `src/app/index.tsx`
-- [ ] Make a button in the home screen that navigates to the car list
+- [x] Move car list screen to `src/app/list/index.tsx`
+- [x] Build home screen in `src/app/index.tsx`
+- [x] Make a button in the home screen that navigates to the car list
+- [x] Commit `add home screen and separate it from car list screen`
 
 ## Later
 

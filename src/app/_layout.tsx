@@ -19,7 +19,13 @@ export function NavigationBar() {
   return (
     <View style={styles.navigation}>
       <NavigationButton label="Home" icon="⌂" onPress={() => router.replace('/')} />
-      <NavigationButton label="Search" icon="⌕" onPress={() => router.replace('/')} />
+      <NavigationButton
+        label="Search"
+        icon="⌕"
+        onPress={() =>
+          router.replace('/list' as Parameters<typeof router.replace>[0])
+        }
+      />
       <NavigationButton
         label="Calendar"
         icon="□"
@@ -75,6 +81,7 @@ export default function RootLayout() {
       <AnimatedSplashOverlay />
       <Stack screenOptions={{ headerShown: false }}>
         <Stack.Screen name="index" />
+        <Stack.Screen name="list/index" />
         <Stack.Screen name="car/[id]" />
         <Stack.Screen name="checkout/index" />
         <Stack.Screen name="checkout/confirmation" />
