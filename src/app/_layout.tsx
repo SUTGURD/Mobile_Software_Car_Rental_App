@@ -10,7 +10,6 @@ import {
 import * as SplashScreen from 'expo-splash-screen';
 import { Pressable, StyleSheet, Text, View, useColorScheme } from 'react-native';
 
-import { AnimatedSplashOverlay } from '@/components/animated-icon';
 import { useAuth } from '@/components/useAuth';
 import { AuthProvider } from '@/context/AuthContext';
 import { designColours, designSpacing, touchTargets } from '@/constants/theme';
@@ -96,7 +95,6 @@ export default function RootLayout() {
   return (
     <AuthProvider>
       <ThemeProvider value={colorScheme === 'dark' ? DarkTheme : DefaultTheme}>
-        <AnimatedSplashOverlay />
         <Stack screenOptions={{ headerShown: false }}>
           <Stack.Screen name="index" />
           <Stack.Screen name="login/index" />

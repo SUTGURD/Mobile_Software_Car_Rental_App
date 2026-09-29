@@ -106,6 +106,10 @@ history, to keep the log accurate about what actually happened.
 - [x] Return to previous screen after logging in
 - [x] Commit: `add nav-bar to login screen and navigate to latest screen when logging in`
 
+## Session 9: Second redesign and refactoring session
+- [x] Delete code for unused animation
+- [x] Commit: `remove code for unused animation`
+
 ## Later
 
 - [ ] Swap dictionary for AsyncStorage, then SQLite (`expo-sqlite`)
