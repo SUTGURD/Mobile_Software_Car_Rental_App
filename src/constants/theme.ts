@@ -33,10 +33,10 @@ export const designColours = {
 } as const satisfies DesignColours;
 
 export const designSizing = {
-  xs: 4,
-  sm: 8,
+  xs: 12,
+  sm: 14,
   md: 16,
-  lg: 24,
+  lg: 18,
 } as const satisfies DesignSizing;
 
 export const touchTargets = {
