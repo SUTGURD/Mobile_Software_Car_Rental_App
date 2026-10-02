@@ -88,6 +88,7 @@ const styles = StyleSheet.create({
     flex: 4.3,
     paddingHorizontal: 20,
     paddingTop: 24,
+    overflow: "scroll",
   },
   title: {
     color: '#FFFFFF',
