@@ -14,7 +14,7 @@ import {
 
 import {
   designColours,
-  designSpacing,
+  designSizing,
   touchTargets,
 } from '@/constants/theme';
 import { useAuth } from '@/components/useAuth';
@@ -128,19 +128,19 @@ const styles = StyleSheet.create({
   },
   scrollContent: {
     flexGrow: 1,
-    padding: designSpacing.md,
+    padding: designSizing.md,
   },
   panel: {
     backgroundColor: designColours.secondary,
     borderRadius: 18,
     flex: 1,
-    padding: designSpacing.md,
+    padding: designSizing.md,
   },
   intro: {
     alignItems: 'center',
     backgroundColor: designColours.background,
     borderRadius: 18,
-    padding: designSpacing.sm,
+    padding: designSizing.sm,
   },
   heading: {
     color: designColours.primary,
@@ -150,15 +150,15 @@ const styles = StyleSheet.create({
   subtitle: {
     color: designColours.secondary,
     fontSize: 14,
-    marginTop: designSpacing.xs,
-    paddingBottom: designSpacing.sm,
+    marginTop: designSizing.xs,
+    paddingBottom: designSizing.sm,
     textAlign: 'center',
   },
   form: {
     backgroundColor: designColours.card,
     borderRadius: 18,
-    gap: designSpacing.xs,
-    padding: designSpacing.md,
+    gap: designSizing.xs,
+    padding: designSizing.md,
   },
   label: {
     color: designColours.secondary,
@@ -173,16 +173,16 @@ const styles = StyleSheet.create({
     color: designColours.text,
     fontSize: 16,
     minHeight: touchTargets.minimumHeight,
-    paddingHorizontal: designSpacing.md,
+    paddingHorizontal: designSizing.md,
   },
   button: {
     alignItems: 'center',
     backgroundColor: designColours.primary,
     borderRadius: 14,
     justifyContent: 'center',
-    marginTop: designSpacing.md,
+    marginTop: designSizing.md,
     minHeight: touchTargets.minimumHeight,
-    paddingHorizontal: designSpacing.md,
+    paddingHorizontal: designSizing.md,
   },
   buttonText: {
     color: designColours.card,
@@ -192,7 +192,7 @@ const styles = StyleSheet.create({
   errorMessage: {
     color: designColours.card,
     fontSize: 14,
-    marginTop: designSpacing.sm,
+    marginTop: designSizing.sm,
     textAlign: 'center',
   },
   pressed: {

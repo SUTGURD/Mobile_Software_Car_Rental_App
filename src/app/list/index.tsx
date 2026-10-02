@@ -13,7 +13,7 @@ import {
 import { NavigationBar } from '@/app/_layout';
 import {
   designColours,
-  designSpacing,
+  designSizing,
   touchTargets,
 } from '@/constants/theme';
 import { dummyCars } from '@/data/dummyCars';
@@ -111,34 +111,34 @@ const styles = StyleSheet.create({
   },
   content: {
     flex: 1,
-    paddingHorizontal: designSpacing.md,
+    paddingHorizontal: designSizing.md,
   },
   heading: {
     color: designColours.primary,
     fontSize: 30,
     fontWeight: '700',
-    marginBottom: designSpacing.md,
-    marginTop: designSpacing.sm,
+    marginBottom: designSizing.md,
+    marginTop: designSizing.sm,
   },
   searchInput: {
     backgroundColor: designColours.card,
     borderColor: designColours.secondary,
-    borderRadius: designSpacing.sm,
+    borderRadius: designSizing.sm,
     borderWidth: 1,
     color: designColours.text,
     fontSize: 16,
     height: touchTargets.minimumHeight,
-    paddingHorizontal: designSpacing.md,
+    paddingHorizontal: designSizing.md,
   },
   listContent: {
-    gap: designSpacing.md,
-    paddingBottom: designSpacing.md,
-    paddingTop: designSpacing.md,
+    gap: designSizing.md,
+    paddingBottom: designSizing.md,
+    paddingTop: designSizing.md,
   },
   card: {
     backgroundColor: designColours.card,
-    borderRadius: designSpacing.md,
-    padding: designSpacing.md,
+    borderRadius: designSizing.md,
+    padding: designSizing.md,
   },
   cardHeader: {
     alignItems: 'flex-start',
@@ -157,7 +157,7 @@ const styles = StyleSheet.create({
     color: designColours.text,
     fontSize: 22,
     fontWeight: '700',
-    marginTop: designSpacing.xs,
+    marginTop: designSizing.xs,
   },
   price: {
     color: designColours.primary,
@@ -167,24 +167,24 @@ const styles = StyleSheet.create({
   details: {
     flexDirection: 'row',
     flexWrap: 'wrap',
-    gap: designSpacing.sm,
-    marginVertical: designSpacing.md,
+    gap: designSizing.sm,
+    marginVertical: designSizing.md,
   },
   detail: {
     backgroundColor: designColours.background,
-    borderRadius: designSpacing.xs,
+    borderRadius: designSizing.xs,
     color: designColours.text,
     fontSize: 13,
-    paddingHorizontal: designSpacing.sm,
-    paddingVertical: designSpacing.xs,
+    paddingHorizontal: designSizing.sm,
+    paddingVertical: designSizing.xs,
   },
   viewButton: {
     alignItems: 'center',
     backgroundColor: designColours.primary,
-    borderRadius: designSpacing.sm,
+    borderRadius: designSizing.sm,
     justifyContent: 'center',
     minHeight: touchTargets.minimumHeight,
-    paddingHorizontal: designSpacing.md,
+    paddingHorizontal: designSizing.md,
   },
   pressed: {
     opacity: 0.8,
@@ -197,7 +197,7 @@ const styles = StyleSheet.create({
   emptyText: {
     color: designColours.textMuted,
     fontSize: 16,
-    paddingVertical: designSpacing.lg,
+    paddingVertical: designSizing.lg,
     textAlign: 'center',
   },
 });

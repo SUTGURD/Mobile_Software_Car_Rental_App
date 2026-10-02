@@ -3,7 +3,7 @@ import { useMemo } from 'react';
 import { Pressable, SafeAreaView, StyleSheet, Text, View } from 'react-native';
 
 import { NavigationBar } from '@/app/_layout';
-import { designColours, designSpacing, touchTargets } from '@/constants/theme';
+import { designColours, designSizing, touchTargets } from '@/constants/theme';
 import { dummyCars } from '@/data/dummyCars';
 
 export default function ConfirmationScreen() {
@@ -61,17 +61,17 @@ function SummaryRow({ label, value }: { label: string; value: string }) {
 
 const styles = StyleSheet.create({
   container: { backgroundColor: designColours.background, flex: 1 },
-  content: { alignItems: 'center', flex: 1, justifyContent: 'center', padding: designSpacing.md },
+  content: { alignItems: 'center', flex: 1, justifyContent: 'center', padding: designSizing.md },
   successIcon: { alignItems: 'center', backgroundColor: '#177245', borderRadius: 40, color: designColours.card, fontSize: 42, height: 80, lineHeight: 76, textAlign: 'center', width: 80 },
-  title: { color: designColours.primary, fontSize: 28, fontWeight: '700', marginTop: designSpacing.md },
-  subtitle: { color: designColours.textMuted, fontSize: 16, marginTop: designSpacing.sm, textAlign: 'center' },
-  referenceBox: { alignItems: 'center', backgroundColor: designColours.card, borderRadius: designSpacing.md, marginTop: designSpacing.lg, padding: designSpacing.md, width: '100%' },
+  title: { color: designColours.primary, fontSize: 28, fontWeight: '700', marginTop: designSizing.md },
+  subtitle: { color: designColours.textMuted, fontSize: 16, marginTop: designSizing.sm, textAlign: 'center' },
+  referenceBox: { alignItems: 'center', backgroundColor: designColours.card, borderRadius: designSizing.md, marginTop: designSizing.lg, padding: designSizing.md, width: '100%' },
   referenceLabel: { color: designColours.textMuted, fontSize: 14 },
-  reference: { color: designColours.primary, fontSize: 24, fontWeight: '700', letterSpacing: 1, marginTop: designSpacing.xs },
-  summary: { backgroundColor: designColours.card, borderRadius: designSpacing.md, marginTop: designSpacing.md, padding: designSpacing.md, width: '100%' },
-  summaryRow: { borderBottomColor: designColours.background, borderBottomWidth: 1, flexDirection: 'row', justifyContent: 'space-between', minHeight: touchTargets.minimumHeight, paddingVertical: designSpacing.sm },
+  reference: { color: designColours.primary, fontSize: 24, fontWeight: '700', letterSpacing: 1, marginTop: designSizing.xs },
+  summary: { backgroundColor: designColours.card, borderRadius: designSizing.md, marginTop: designSizing.md, padding: designSizing.md, width: '100%' },
+  summaryRow: { borderBottomColor: designColours.background, borderBottomWidth: 1, flexDirection: 'row', justifyContent: 'space-between', minHeight: touchTargets.minimumHeight, paddingVertical: designSizing.sm },
   summaryLabel: { color: designColours.textMuted, fontSize: 15 },
   summaryValue: { color: designColours.text, fontSize: 15, fontWeight: '600', textAlign: 'right' },
-  primaryButton: { alignItems: 'center', backgroundColor: designColours.primary, borderRadius: designSpacing.sm, justifyContent: 'center', minHeight: touchTargets.minimumHeight, marginTop: designSpacing.md, paddingHorizontal: designSpacing.md, width: '100%' },
+  primaryButton: { alignItems: 'center', backgroundColor: designColours.primary, borderRadius: designSizing.sm, justifyContent: 'center', minHeight: touchTargets.minimumHeight, marginTop: designSizing.md, paddingHorizontal: designSizing.md, width: '100%' },
   primaryButtonText: { color: designColours.card, fontSize: 17, fontWeight: '700' },
 });

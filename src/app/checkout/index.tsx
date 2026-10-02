@@ -11,7 +11,7 @@ import {
 } from 'react-native';
 
 import { NavigationBar } from '@/app/_layout';
-import { designColours, designSpacing, touchTargets } from '@/constants/theme';
+import { designColours, designSizing, touchTargets } from '@/constants/theme';
 import { dummyAddOns, dummyCars } from '@/data/dummyCars';
 
 const DAY_IN_MILLISECONDS = 24 * 60 * 60 * 1000;
@@ -145,24 +145,24 @@ function DateInput({
 
 const styles = StyleSheet.create({
   container: { backgroundColor: designColours.background, flex: 1 },
-  content: { padding: designSpacing.md },
-  title: { color: designColours.primary, fontSize: 30, fontWeight: '700', marginBottom: designSpacing.md },
-  card: { backgroundColor: designColours.primary, borderRadius: designSpacing.md, padding: designSpacing.md },
+  content: { padding: designSizing.md },
+  title: { color: designColours.primary, fontSize: 30, fontWeight: '700', marginBottom: designSizing.md },
+  card: { backgroundColor: designColours.primary, borderRadius: designSizing.md, padding: designSizing.md },
   cardBrand: { color: designColours.background, fontSize: 15, fontWeight: '600' },
   cardModel: { color: designColours.card, fontSize: 25, fontWeight: '700' },
-  cardPrice: { color: designColours.background, fontSize: 16, marginTop: designSpacing.sm },
-  sectionTitle: { color: designColours.primary, fontSize: 20, fontWeight: '700', marginTop: designSpacing.lg, marginBottom: designSpacing.sm },
-  inputGroup: { marginBottom: designSpacing.sm },
-  inputLabel: { color: designColours.text, fontSize: 14, fontWeight: '600', marginBottom: designSpacing.xs },
-  input: { backgroundColor: designColours.card, borderColor: designColours.secondary, borderRadius: designSpacing.sm, borderWidth: 1, color: designColours.text, fontSize: 16, height: touchTargets.minimumHeight, paddingHorizontal: designSpacing.md },
-  addOn: { alignItems: 'center', backgroundColor: designColours.card, borderColor: designColours.card, borderRadius: designSpacing.sm, borderWidth: 1, flexDirection: 'row', justifyContent: 'space-between', marginBottom: designSpacing.sm, minHeight: touchTargets.minimumHeight, padding: designSpacing.sm },
+  cardPrice: { color: designColours.background, fontSize: 16, marginTop: designSizing.sm },
+  sectionTitle: { color: designColours.primary, fontSize: 20, fontWeight: '700', marginTop: designSizing.lg, marginBottom: designSizing.sm },
+  inputGroup: { marginBottom: designSizing.sm },
+  inputLabel: { color: designColours.text, fontSize: 14, fontWeight: '600', marginBottom: designSizing.xs },
+  input: { backgroundColor: designColours.card, borderColor: designColours.secondary, borderRadius: designSizing.sm, borderWidth: 1, color: designColours.text, fontSize: 16, height: touchTargets.minimumHeight, paddingHorizontal: designSizing.md },
+  addOn: { alignItems: 'center', backgroundColor: designColours.card, borderColor: designColours.card, borderRadius: designSizing.sm, borderWidth: 1, flexDirection: 'row', justifyContent: 'space-between', marginBottom: designSizing.sm, minHeight: touchTargets.minimumHeight, padding: designSizing.sm },
   addOnSelected: { borderColor: designColours.accent },
   addOnName: { color: designColours.text, fontSize: 16, fontWeight: '600' },
-  addOnPrice: { color: designColours.textMuted, fontSize: 13, marginTop: designSpacing.xs },
+  addOnPrice: { color: designColours.textMuted, fontSize: 13, marginTop: designSizing.xs },
   addOnState: { color: designColours.accent, fontWeight: '700' },
-  totalRow: { alignItems: 'center', flexDirection: 'row', justifyContent: 'space-between', marginTop: designSpacing.md },
+  totalRow: { alignItems: 'center', flexDirection: 'row', justifyContent: 'space-between', marginTop: designSizing.md },
   totalLabel: { color: designColours.text, fontSize: 17, fontWeight: '600' },
   totalPrice: { color: designColours.primary, fontSize: 24, fontWeight: '700' },
-  primaryButton: { alignItems: 'center', backgroundColor: designColours.accent, borderRadius: designSpacing.sm, justifyContent: 'center', minHeight: touchTargets.minimumHeight, marginTop: designSpacing.md },
+  primaryButton: { alignItems: 'center', backgroundColor: designColours.accent, borderRadius: designSizing.sm, justifyContent: 'center', minHeight: touchTargets.minimumHeight, marginTop: designSizing.md },
   primaryButtonText: { color: designColours.card, fontSize: 17, fontWeight: '700' },
 });

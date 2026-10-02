@@ -10,7 +10,7 @@ export interface DesignColours {
   readonly accent: HexColour;
 }
 
-export interface DesignSpacing {
+export interface DesignSizing {
   readonly xs: 4;
   readonly sm: 8;
   readonly md: 16;
@@ -32,12 +32,12 @@ export const designColours = {
   accent: '#C0392B',
 } as const satisfies DesignColours;
 
-export const designSpacing = {
+export const designSizing = {
   xs: 4,
   sm: 8,
   md: 16,
   lg: 24,
-} as const satisfies DesignSpacing;
+} as const satisfies DesignSizing;
 
 export const touchTargets = {
   minimumHeight: 48,
