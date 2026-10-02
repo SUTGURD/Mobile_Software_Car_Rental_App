@@ -1,7 +1,7 @@
 import { router } from 'expo-router';
 import { Pressable, SafeAreaView, StyleSheet, Text } from 'react-native';
 
-import { designColours, designSpacing, touchTargets } from '@/constants/theme';
+import { designColours, designSizing, touchTargets } from '@/constants/theme';
 
 export default function ErrorScreen() {
   return (
@@ -28,18 +28,18 @@ const styles = StyleSheet.create({
     backgroundColor: designColours.background,
     flex: 1,
     justifyContent: 'center',
-    paddingHorizontal: designSpacing.md,
+    paddingHorizontal: designSizing.md,
   },
   heading: {
     color: designColours.primary,
-    fontSize: 88,
+    fontSize: designSizing.xl8,
     fontWeight: '700',
     lineHeight: 96,
     textAlign: 'center',
   },
   message: {
     color: designColours.secondary,
-    fontSize: 22,
+    fontSize: designSizing.xl2,
     lineHeight: 28,
     textAlign: 'center',
   },
@@ -47,14 +47,14 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     alignSelf: 'stretch',
     backgroundColor: designColours.secondary,
-    borderRadius: designSpacing.md,
+    borderRadius: designSizing.md,
     justifyContent: 'center',
-    marginTop: designSpacing.lg * 2,
+    marginTop: designSizing.lg * 2,
     minHeight: touchTargets.minimumHeight,
   },
   buttonText: {
     color: designColours.card,
-    fontSize: 14,
+    fontSize: designSizing.sm,
     fontWeight: '700',
   },
   pressed: {

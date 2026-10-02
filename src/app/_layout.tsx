@@ -12,7 +12,7 @@ import { Pressable, StyleSheet, Text, View, useColorScheme } from 'react-native'
 
 import { useAuth } from '@/components/useAuth';
 import { AuthProvider } from '@/context/AuthContext';
-import { designColours, designSpacing, touchTargets } from '@/constants/theme';
+import { designColours, designSizing, touchTargets } from '@/constants/theme';
 
 SplashScreen.preventAutoHideAsync();
 
@@ -118,8 +118,8 @@ const styles = StyleSheet.create({
     borderTopWidth: StyleSheet.hairlineWidth,
     flexDirection: 'row',
     justifyContent: 'space-around',
-    paddingBottom: designSpacing.xs,
-    paddingTop: designSpacing.xs,
+    paddingBottom: designSizing.xs,
+    paddingTop: designSizing.xs,
   },
   navigationItem: {
     alignItems: 'center',
@@ -132,7 +132,7 @@ const styles = StyleSheet.create({
   },
   navigationIcon: {
     color: designColours.primary,
-    fontSize: 22,
+    fontSize: designSizing.xl2,
     lineHeight: 24,
   },
   navigationIconDisabled: {
@@ -140,7 +140,7 @@ const styles = StyleSheet.create({
   },
   navigationLabel: {
     color: designColours.text,
-    fontSize: 12,
+    fontSize: designSizing.xs,
     fontWeight: '600',
   },
   navigationLabelDisabled: {

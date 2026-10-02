@@ -14,7 +14,7 @@ import {
 
 import {
   designColours,
-  designSpacing,
+  designSizing,
   touchTargets,
 } from '@/constants/theme';
 import { useAuth } from '@/components/useAuth';
@@ -128,41 +128,41 @@ const styles = StyleSheet.create({
   },
   scrollContent: {
     flexGrow: 1,
-    padding: designSpacing.md,
+    padding: designSizing.md,
   },
   panel: {
     backgroundColor: designColours.secondary,
     borderRadius: 18,
     flex: 1,
-    padding: designSpacing.md,
+    padding: designSizing.md,
   },
   intro: {
     alignItems: 'center',
     backgroundColor: designColours.background,
     borderRadius: 18,
-    padding: designSpacing.sm,
+    padding: designSizing.sm,
   },
   heading: {
     color: designColours.primary,
-    fontSize: 24,
+    fontSize: designSizing.xl2,
     fontWeight: '700',
   },
   subtitle: {
     color: designColours.secondary,
-    fontSize: 14,
-    marginTop: designSpacing.xs,
-    paddingBottom: designSpacing.sm,
+    fontSize: designSizing.sm,
+    marginTop: designSizing.xs,
+    paddingBottom: designSizing.sm,
     textAlign: 'center',
   },
   form: {
     backgroundColor: designColours.card,
     borderRadius: 18,
-    gap: designSpacing.xs,
-    padding: designSpacing.md,
+    gap: designSizing.xs,
+    padding: designSizing.md,
   },
   label: {
     color: designColours.secondary,
-    fontSize: 14,
+    fontSize: designSizing.sm,
     fontWeight: '600',
   },
   input: {
@@ -171,28 +171,28 @@ const styles = StyleSheet.create({
     borderRadius: 12,
     borderWidth: 1,
     color: designColours.text,
-    fontSize: 16,
+    fontSize: designSizing.md,
     minHeight: touchTargets.minimumHeight,
-    paddingHorizontal: designSpacing.md,
+    paddingHorizontal: designSizing.md,
   },
   button: {
     alignItems: 'center',
     backgroundColor: designColours.primary,
     borderRadius: 14,
     justifyContent: 'center',
-    marginTop: designSpacing.md,
+    marginTop: designSizing.md,
     minHeight: touchTargets.minimumHeight,
-    paddingHorizontal: designSpacing.md,
+    paddingHorizontal: designSizing.md,
   },
   buttonText: {
     color: designColours.card,
-    fontSize: 14,
+    fontSize: designSizing.sm,
     fontWeight: '700',
   },
   errorMessage: {
     color: designColours.card,
-    fontSize: 14,
-    marginTop: designSpacing.sm,
+    fontSize: designSizing.sm,
+    marginTop: designSizing.sm,
     textAlign: 'center',
   },
   pressed: {

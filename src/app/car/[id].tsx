@@ -11,7 +11,7 @@ import {
 
 import { NavigationBar } from '@/app/_layout';
 import { useAuth } from '@/components/useAuth';
-import { designColours, designSpacing, touchTargets } from '@/constants/theme';
+import { designColours, designSizing, touchTargets } from '@/constants/theme';
 import { dummyCars } from '@/data/dummyCars';
 
 function formatLabel(value: string) {
@@ -138,52 +138,52 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   scrollContent: {
-    padding: designSpacing.md,
+    padding: designSizing.md,
   },
   heroBanner: {
     backgroundColor: designColours.primary,
-    borderRadius: designSpacing.md,
+    borderRadius: designSizing.md,
     minHeight: 190,
     justifyContent: 'flex-end',
     overflow: 'hidden',
-    padding: designSpacing.lg,
+    padding: designSizing.lg,
   },
   heroEyebrow: {
     color: designColours.background,
-    fontSize: 14,
+    fontSize: designSizing.sm,
     fontWeight: '600',
-    marginBottom: designSpacing.sm,
+    marginBottom: designSizing.sm,
   },
   heroBrand: {
     color: designColours.card,
-    fontSize: 18,
+    fontSize: designSizing.lg,
     fontWeight: '600',
   },
   heroModel: {
     color: designColours.card,
-    fontSize: 34,
+    fontSize: designSizing.xl4,
     fontWeight: '700',
   },
   heroPrice: {
     color: designColours.background,
-    fontSize: 17,
+    fontSize: designSizing.md,
     fontWeight: '700',
-    marginTop: designSpacing.sm,
+    marginTop: designSizing.sm,
   },
   section: {
     backgroundColor: designColours.card,
-    borderRadius: designSpacing.md,
-    marginTop: designSpacing.md,
-    padding: designSpacing.md,
+    borderRadius: designSizing.md,
+    marginTop: designSizing.md,
+    padding: designSizing.md,
   },
   sectionTitle: {
     color: designColours.primary,
-    fontSize: 21,
+    fontSize: designSizing.xl,
     fontWeight: '700',
-    marginBottom: designSpacing.sm,
+    marginBottom: designSizing.sm,
   },
   specifications: {
-    gap: designSpacing.sm,
+    gap: designSizing.sm,
   },
   specification: {
     alignItems: 'center',
@@ -196,11 +196,11 @@ const styles = StyleSheet.create({
   specLabel: {
     color: designColours.textMuted,
     flex: 1,
-    fontSize: 15,
+    fontSize: designSizing.md,
   },
   specValue: {
     color: designColours.text,
-    fontSize: 15,
+    fontSize: designSizing.md,
     fontWeight: '600',
     textAlign: 'right',
   },
@@ -211,44 +211,44 @@ const styles = StyleSheet.create({
     color: designColours.accent,
   },
   featureList: {
-    gap: designSpacing.sm,
+    gap: designSizing.sm,
   },
   feature: {
     backgroundColor: designColours.background,
-    borderRadius: designSpacing.sm,
+    borderRadius: designSizing.sm,
     color: designColours.text,
-    fontSize: 15,
-    padding: designSpacing.sm,
+    fontSize: designSizing.md,
+    padding: designSizing.sm,
   },
   primaryButton: {
     alignItems: 'center',
     backgroundColor: designColours.accent,
-    borderRadius: designSpacing.sm,
+    borderRadius: designSizing.sm,
     justifyContent: 'center',
     minHeight: touchTargets.minimumHeight,
-    marginTop: designSpacing.md,
-    paddingHorizontal: designSpacing.md,
+    marginTop: designSizing.md,
+    paddingHorizontal: designSizing.md,
   },
   primaryButtonText: {
     color: designColours.card,
-    fontSize: 17,
+    fontSize: designSizing.md,
     fontWeight: '700',
   },
   fallback: {
     alignItems: 'center',
     flex: 1,
     justifyContent: 'center',
-    padding: designSpacing.lg,
+    padding: designSizing.lg,
   },
   fallbackTitle: {
     color: designColours.primary,
-    fontSize: 28,
+    fontSize: designSizing.xl3,
     fontWeight: '700',
   },
   fallbackText: {
     color: designColours.textMuted,
-    fontSize: 16,
-    marginTop: designSpacing.sm,
+    fontSize: designSizing.md,
+    marginTop: designSizing.sm,
     textAlign: 'center',
   },
   navigation: {
@@ -258,8 +258,8 @@ const styles = StyleSheet.create({
     borderTopWidth: StyleSheet.hairlineWidth,
     flexDirection: 'row',
     justifyContent: 'space-around',
-    paddingBottom: designSpacing.xs,
-    paddingTop: designSpacing.xs,
+    paddingBottom: designSizing.xs,
+    paddingTop: designSizing.xs,
   },
   navigationItem: {
     alignItems: 'center',
@@ -269,12 +269,12 @@ const styles = StyleSheet.create({
   },
   navigationIcon: {
     color: designColours.primary,
-    fontSize: 22,
+    fontSize: designSizing.xl2,
     lineHeight: 24,
   },
   navigationLabel: {
     color: designColours.text,
-    fontSize: 12,
+    fontSize: designSizing.xs,
     fontWeight: '600',
   },
 });

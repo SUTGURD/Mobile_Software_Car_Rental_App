@@ -10,22 +10,25 @@ export interface DesignColours {
   readonly accent: HexColour;
 }
 
-export interface DesignSpacing {
-  readonly xs: 4;
-  readonly sm: 8;
-  readonly md: 16;
-  readonly lg: 24;
+export interface DesignSizing {
+  readonly xs: number;
+  readonly sm: number;
+  readonly md: number;
+  readonly lg: number;
+  readonly xl: number;
+  readonly xl2: number;
+  readonly xl3: number;
+  readonly xl4: number;
+  readonly xl5: number;
+  readonly xl6: number;
+  readonly xl7: number;
+  readonly xl8: number;
+  readonly xl9: number;
 }
 
 export interface TouchTargets {
-  readonly minimumHeight: 48;
-  readonly minimumWidth: 48;
-}
-
-export interface DesignTokens {
-  readonly colours: DesignColours;
-  readonly spacing: DesignSpacing;
-  readonly touchTargets: TouchTargets;
+  readonly minimumHeight: number;
+  readonly minimumWidth: number;
 }
 
 export const designColours = {
@@ -38,20 +41,23 @@ export const designColours = {
   accent: '#C0392B',
 } as const satisfies DesignColours;
 
-export const designSpacing = {
-  xs: 4,
-  sm: 8,
+export const designSizing = {
+  xs: 12,
+  sm: 14,
   md: 16,
-  lg: 24,
-} as const satisfies DesignSpacing;
+  lg: 18,
+  xl: 20,
+  xl2: 24,
+  xl3: 30,
+  xl4: 36,
+  xl5: 48,
+  xl6: 60,
+  xl7: 72,
+  xl8: 96,
+  xl9: 128,
+} as const satisfies DesignSizing;
 
 export const touchTargets = {
   minimumHeight: 48,
   minimumWidth: 48,
 } as const satisfies TouchTargets;
-
-export const designTokens = {
-  colours: designColours,
-  spacing: designSpacing,
-  touchTargets,
-} as const satisfies DesignTokens;

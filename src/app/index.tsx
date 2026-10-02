@@ -3,6 +3,7 @@ import { Pressable, SafeAreaView, StyleSheet, Text, View } from 'react-native';
 
 import { NavigationBar } from '@/app/_layout';
 import { useAuth } from '@/components/useAuth';
+import { designSizing } from '@/constants/theme';
 
 function CarIllustration() {
   return (
@@ -90,7 +91,7 @@ const styles = StyleSheet.create({
   },
   title: {
     color: '#FFFFFF',
-    fontSize: 32,
+    fontSize: designSizing.xl3,
     fontWeight: '700',
     marginBottom: 18,
     textAlign: 'center',
@@ -185,7 +186,7 @@ const styles = StyleSheet.create({
   },
   actionButtonText: {
     color: '#FFFFFF',
-    fontSize: 28,
+    fontSize: designSizing.xl3,
     fontWeight: '600',
   },
   pressed: {
