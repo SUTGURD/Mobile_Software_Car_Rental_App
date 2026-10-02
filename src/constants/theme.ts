@@ -11,15 +11,15 @@ export interface DesignColours {
 }
 
 export interface DesignSizing {
-  readonly xs: 4;
-  readonly sm: 8;
-  readonly md: 16;
-  readonly lg: 24;
+  readonly xs: number;
+  readonly sm: number;
+  readonly md: number;
+  readonly lg: number;
 }
 
 export interface TouchTargets {
-  readonly minimumHeight: 48;
-  readonly minimumWidth: 48;
+  readonly minimumHeight: number;
+  readonly minimumWidth: number;
 }
 
 export const designColours = {
