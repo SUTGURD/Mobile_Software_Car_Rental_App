@@ -22,12 +22,6 @@ export interface TouchTargets {
   readonly minimumWidth: 48;
 }
 
-export interface DesignTokens {
-  readonly colours: DesignColours;
-  readonly spacing: DesignSpacing;
-  readonly touchTargets: TouchTargets;
-}
-
 export const designColours = {
   primary: '#2B3A55',
   secondary: '#4C6D8C',
@@ -49,9 +43,3 @@ export const touchTargets = {
   minimumHeight: 48,
   minimumWidth: 48,
 } as const satisfies TouchTargets;
-
-export const designTokens = {
-  colours: designColours,
-  spacing: designSpacing,
-  touchTargets,
-} as const satisfies DesignTokens;
