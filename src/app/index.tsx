@@ -70,8 +70,6 @@ export default function HomeScreen() {
           />
         </View>
       </View>
-      <View style={styles.middlePanel} />
-      <View style={styles.lowerPanel} />
       <NavigationBar />
     </SafeAreaView>
   );
@@ -192,13 +190,5 @@ const styles = StyleSheet.create({
   },
   pressed: {
     opacity: 0.8,
-  },
-  middlePanel: {
-    backgroundColor: '#B6D3E7',
-    flex: 1,
-  },
-  lowerPanel: {
-    backgroundColor: '#D5DDED',
-    flex: 0.8,
   },
 });
