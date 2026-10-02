@@ -61,7 +61,7 @@ function SummaryRow({ label, value }: { label: string; value: string }) {
 
 const styles = StyleSheet.create({
   container: { backgroundColor: designColours.background, flex: 1 },
-  content: { alignItems: 'center', flex: 1, justifyContent: 'center', padding: designSizing.md },
+  content: { alignItems: 'center', flex: 1, justifyContent: 'center', padding: designSizing.md, overflow: "scroll" },
   successIcon: { alignItems: 'center', backgroundColor: '#177245', borderRadius: 40, color: designColours.card, fontSize: designSizing.xl5, height: 80, lineHeight: 76, textAlign: 'center', width: 80 },
   title: { color: designColours.primary, fontSize: designSizing.xl3, fontWeight: '700', marginTop: designSizing.md },
   subtitle: { color: designColours.textMuted, fontSize: designSizing.md, marginTop: designSizing.sm, textAlign: 'center' },
