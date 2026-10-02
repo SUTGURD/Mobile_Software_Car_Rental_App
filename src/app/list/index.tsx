@@ -115,7 +115,7 @@ const styles = StyleSheet.create({
   },
   heading: {
     color: designColours.primary,
-    fontSize: 30,
+    fontSize: designSizing.xl3,
     fontWeight: '700',
     marginBottom: designSizing.md,
     marginTop: designSizing.sm,
@@ -126,7 +126,7 @@ const styles = StyleSheet.create({
     borderRadius: designSizing.sm,
     borderWidth: 1,
     color: designColours.text,
-    fontSize: 16,
+    fontSize: designSizing.md,
     height: touchTargets.minimumHeight,
     paddingHorizontal: designSizing.md,
   },
@@ -150,18 +150,18 @@ const styles = StyleSheet.create({
   },
   brand: {
     color: designColours.textMuted,
-    fontSize: 14,
+    fontSize: designSizing.sm,
     fontWeight: '600',
   },
   model: {
     color: designColours.text,
-    fontSize: 22,
+    fontSize: designSizing.xl2,
     fontWeight: '700',
     marginTop: designSizing.xs,
   },
   price: {
     color: designColours.primary,
-    fontSize: 16,
+    fontSize: designSizing.md,
     fontWeight: '700',
   },
   details: {
@@ -174,7 +174,7 @@ const styles = StyleSheet.create({
     backgroundColor: designColours.background,
     borderRadius: designSizing.xs,
     color: designColours.text,
-    fontSize: 13,
+    fontSize: designSizing.sm,
     paddingHorizontal: designSizing.sm,
     paddingVertical: designSizing.xs,
   },
@@ -191,12 +191,12 @@ const styles = StyleSheet.create({
   },
   viewButtonText: {
     color: designColours.card,
-    fontSize: 16,
+    fontSize: designSizing.md,
     fontWeight: '700',
   },
   emptyText: {
     color: designColours.textMuted,
-    fontSize: 16,
+    fontSize: designSizing.md,
     paddingVertical: designSizing.lg,
     textAlign: 'center',
   },

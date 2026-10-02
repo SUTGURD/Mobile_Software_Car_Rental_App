@@ -144,12 +144,12 @@ const styles = StyleSheet.create({
   },
   heading: {
     color: designColours.primary,
-    fontSize: 24,
+    fontSize: designSizing.xl2,
     fontWeight: '700',
   },
   subtitle: {
     color: designColours.secondary,
-    fontSize: 14,
+    fontSize: designSizing.sm,
     marginTop: designSizing.xs,
     paddingBottom: designSizing.sm,
     textAlign: 'center',
@@ -162,7 +162,7 @@ const styles = StyleSheet.create({
   },
   label: {
     color: designColours.secondary,
-    fontSize: 14,
+    fontSize: designSizing.sm,
     fontWeight: '600',
   },
   input: {
@@ -171,7 +171,7 @@ const styles = StyleSheet.create({
     borderRadius: 12,
     borderWidth: 1,
     color: designColours.text,
-    fontSize: 16,
+    fontSize: designSizing.md,
     minHeight: touchTargets.minimumHeight,
     paddingHorizontal: designSizing.md,
   },
@@ -186,12 +186,12 @@ const styles = StyleSheet.create({
   },
   buttonText: {
     color: designColours.card,
-    fontSize: 14,
+    fontSize: designSizing.sm,
     fontWeight: '700',
   },
   errorMessage: {
     color: designColours.card,
-    fontSize: 14,
+    fontSize: designSizing.sm,
     marginTop: designSizing.sm,
     textAlign: 'center',
   },

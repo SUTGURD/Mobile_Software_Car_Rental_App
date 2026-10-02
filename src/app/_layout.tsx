@@ -132,7 +132,7 @@ const styles = StyleSheet.create({
   },
   navigationIcon: {
     color: designColours.primary,
-    fontSize: 22,
+    fontSize: designSizing.xl2,
     lineHeight: 24,
   },
   navigationIconDisabled: {
@@ -140,7 +140,7 @@ const styles = StyleSheet.create({
   },
   navigationLabel: {
     color: designColours.text,
-    fontSize: 12,
+    fontSize: designSizing.xs,
     fontWeight: '600',
   },
   navigationLabelDisabled: {

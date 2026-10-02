@@ -32,14 +32,14 @@ const styles = StyleSheet.create({
   },
   heading: {
     color: designColours.primary,
-    fontSize: 88,
+    fontSize: designSizing.xl8,
     fontWeight: '700',
     lineHeight: 96,
     textAlign: 'center',
   },
   message: {
     color: designColours.secondary,
-    fontSize: 22,
+    fontSize: designSizing.xl2,
     lineHeight: 28,
     textAlign: 'center',
   },
@@ -54,7 +54,7 @@ const styles = StyleSheet.create({
   },
   buttonText: {
     color: designColours.card,
-    fontSize: 14,
+    fontSize: designSizing.sm,
     fontWeight: '700',
   },
   pressed: {

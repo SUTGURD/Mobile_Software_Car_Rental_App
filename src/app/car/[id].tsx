@@ -150,23 +150,23 @@ const styles = StyleSheet.create({
   },
   heroEyebrow: {
     color: designColours.background,
-    fontSize: 14,
+    fontSize: designSizing.sm,
     fontWeight: '600',
     marginBottom: designSizing.sm,
   },
   heroBrand: {
     color: designColours.card,
-    fontSize: 18,
+    fontSize: designSizing.lg,
     fontWeight: '600',
   },
   heroModel: {
     color: designColours.card,
-    fontSize: 34,
+    fontSize: designSizing.xl4,
     fontWeight: '700',
   },
   heroPrice: {
     color: designColours.background,
-    fontSize: 17,
+    fontSize: designSizing.md,
     fontWeight: '700',
     marginTop: designSizing.sm,
   },
@@ -178,7 +178,7 @@ const styles = StyleSheet.create({
   },
   sectionTitle: {
     color: designColours.primary,
-    fontSize: 21,
+    fontSize: designSizing.xl,
     fontWeight: '700',
     marginBottom: designSizing.sm,
   },
@@ -196,11 +196,11 @@ const styles = StyleSheet.create({
   specLabel: {
     color: designColours.textMuted,
     flex: 1,
-    fontSize: 15,
+    fontSize: designSizing.md,
   },
   specValue: {
     color: designColours.text,
-    fontSize: 15,
+    fontSize: designSizing.md,
     fontWeight: '600',
     textAlign: 'right',
   },
@@ -217,7 +217,7 @@ const styles = StyleSheet.create({
     backgroundColor: designColours.background,
     borderRadius: designSizing.sm,
     color: designColours.text,
-    fontSize: 15,
+    fontSize: designSizing.md,
     padding: designSizing.sm,
   },
   primaryButton: {
@@ -231,7 +231,7 @@ const styles = StyleSheet.create({
   },
   primaryButtonText: {
     color: designColours.card,
-    fontSize: 17,
+    fontSize: designSizing.md,
     fontWeight: '700',
   },
   fallback: {
@@ -242,12 +242,12 @@ const styles = StyleSheet.create({
   },
   fallbackTitle: {
     color: designColours.primary,
-    fontSize: 28,
+    fontSize: designSizing.xl3,
     fontWeight: '700',
   },
   fallbackText: {
     color: designColours.textMuted,
-    fontSize: 16,
+    fontSize: designSizing.md,
     marginTop: designSizing.sm,
     textAlign: 'center',
   },
@@ -269,12 +269,12 @@ const styles = StyleSheet.create({
   },
   navigationIcon: {
     color: designColours.primary,
-    fontSize: 22,
+    fontSize: designSizing.xl2,
     lineHeight: 24,
   },
   navigationLabel: {
     color: designColours.text,
-    fontSize: 12,
+    fontSize: designSizing.xs,
     fontWeight: '600',
   },
 });
