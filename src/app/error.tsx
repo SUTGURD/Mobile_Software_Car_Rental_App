@@ -1,5 +1,6 @@
 import { router } from 'expo-router';
-import { Pressable, SafeAreaView, StyleSheet, Text } from 'react-native';
+import { Pressable, StyleSheet, Text } from 'react-native';
+import { SafeAreaView } from 'react-native-safe-area-context';
 
 import { designColours, designSizing, touchTargets } from '@/constants/theme';
 

@@ -2,13 +2,13 @@ import { router, useLocalSearchParams } from 'expo-router';
 import { useMemo, useState } from 'react';
 import {
   Pressable,
-  SafeAreaView,
   ScrollView,
   StyleSheet,
   Text,
   TextInput,
   View,
 } from 'react-native';
+import { SafeAreaView } from 'react-native-safe-area-context';
 
 import { NavigationBar } from '@/app/_layout';
 import { designColours, designSizing, touchTargets } from '@/constants/theme';
