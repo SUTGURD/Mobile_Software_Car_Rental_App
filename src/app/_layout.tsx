@@ -7,14 +7,11 @@ import {
   router,
   type ErrorBoundaryProps,
 } from 'expo-router';
-import * as SplashScreen from 'expo-splash-screen';
 import { Pressable, StyleSheet, Text, View, useColorScheme } from 'react-native';
 
 import { useAuth } from '@/components/useAuth';
 import { AuthProvider } from '@/context/AuthContext';
 import { designColours, designSizing, touchTargets } from '@/constants/theme';
-
-SplashScreen.preventAutoHideAsync();
 
 function NavigationErrorBoundary(_: ErrorBoundaryProps) {
   return <Redirect href={'/error' as Parameters<typeof Redirect>[0]['href']} />;
