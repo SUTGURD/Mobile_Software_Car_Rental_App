@@ -47,7 +47,7 @@ export default function LoginScreen() {
   return (
     <SafeAreaView style={styles.safeArea}>
       <KeyboardAvoidingView
-        behavior={Platform.OS === 'ios' ? 'padding' : undefined}
+        behavior='padding'
         style={styles.keyboardArea}>
         <ScrollView
           contentContainerStyle={styles.scrollContent}
